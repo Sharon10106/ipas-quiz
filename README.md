@@ -27,7 +27,7 @@ No build step, no server required. State persists in `localStorage`.
 - **"💡 為什麼？" panel** — pre-generated explanation per question (why correct, why each wrong option, memory hook) + deep-link to study guide PDF at the right page
 - **Option shuffle mode** — randomize A/B/C/D order to prevent position-memorization; explanation auto-rewrites to match displayed order
 - **Round history + cumulative weak-topic tracking** — scoped per subject
-- **Keyboard shortcuts** — `A`/`B`/`C`/`D` (with `Cmd+C` etc. preserved), `Enter` to advance, `W` to toggle the why panel
+- **Keyboard shortcuts** — `A`/`B`/`C`/`D` or `1`/`2`/`3`/`4` (with `Cmd+C` etc. preserved), `Enter` to advance, `W` to toggle the why panel
 
 ## Project structure
 

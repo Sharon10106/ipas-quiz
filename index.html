@@ -822,7 +822,7 @@ function renderHome() {
         </select>
       </div>
       <button class="btn btn-primary" style="width:100%; padding:12px;" onclick="startRound()">開始作答 →</button>
-      <p class="note">作答時可用 <span class="kbd">A/B/C/D</span> 選答，<span class="kbd">Enter</span> 下一題，<span class="kbd">W</span> 切換「為什麼？」相關章節。</p>
+      <p class="note">作答時可用 <span class="kbd">A/B/C/D</span> 或 <span class="kbd">1/2/3/4</span> 選答，<span class="kbd">Enter</span> 下一題，<span class="kbd">W</span> 切換「為什麼？」相關章節。</p>
     </div>
 
     <div class="card">
@@ -1293,8 +1293,11 @@ document.addEventListener("keydown", (e) => {
   if (state.view !== "quiz") return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   if (!state.answered) {
-    const k = e.key.toUpperCase();
-    if (["A","B","C","D"].includes(k)) selectOption(k);
+    const answerKey = {
+      A: "A", B: "B", C: "C", D: "D",
+      "1": "A", "2": "B", "3": "C", "4": "D",
+    }[e.key.toUpperCase()];
+    if (answerKey) selectOption(answerKey);
   } else if (e.key === "Enter") {
     nextQuestion();
   } else if (e.key.toUpperCase() === "W") {
